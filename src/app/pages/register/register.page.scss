@@ -1,0 +1,74 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    text-align: left;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+  
+  .instruction {
+    color: black;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .phone-input-wrapper {
+    display: flex;
+    background: black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .country-select {
+    border: none;
+    background: white;
+    padding: 0 8px;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .mobile-input {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    color: black;
+    background: white;
+  }
+  
+  .country-select:focus,
+  .mobile-input:focus {
+    outline: none;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  :host {
+    --ion-background-color: #ffffff;
+  }
+  
+  ion-content {
+    --background: #ffffff;
+  }
+  

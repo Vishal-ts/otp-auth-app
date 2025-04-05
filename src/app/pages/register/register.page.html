@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="form-container">
+    <h1 class="page-title">Register</h1>
+    <p class="instruction">Enter your mobile number</p>
+
+    <div class="phone-input-wrapper">
+      <select [(ngModel)]="countryCode" class="country-select">
+        <option value="+91">+91</option>
+        <option value="+1">+1</option>
+        <option value="+44">+44</option>
+        <option value="+61">+61</option>
+        <option value="+81">+81</option>
+      </select>
+
+      <!-- Added keydown event listener to prevent non-numeric input -->
+      <input
+        type="tel"
+        [(ngModel)]="mobileNumber"
+        class="mobile-input"
+        placeholder="Mobile number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        (keydown)="validateInput($event)"
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <ion-button expand="block" color="primary" (click)="sendOtp()">Send OTP</ion-button>
+  </div>
+</ion-content>

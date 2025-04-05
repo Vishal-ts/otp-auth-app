@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="form-container">
+    <h1 class="page-title">Enter OTP</h1>
+    <p class="instruction">A code has been sent to your mobile number</p>
+
+    <!-- Note for Interviewer with red text -->
+    <div class="info-text red">
+      <p><strong>Note for Interviewer:</strong> The OTP is <strong>123456</strong>. You can test by entering this OTP or use a wrong OTP for validation.</p>
+    </div>
+
+    <div class="otp-input-wrapper">
+      <input
+        type="tel"
+        [(ngModel)]="otp"
+        class="otp-input"
+        placeholder="Enter OTP"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        maxlength="6"
+        (keydown)="onOtpInput($event)"
+      />
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <ion-button expand="block" color="primary" (click)="verifyOtp()">Verify</ion-button>
+  </div>
+</ion-content>
