@@ -1,0 +1,7 @@
+{
+  "name": "otp-app-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
