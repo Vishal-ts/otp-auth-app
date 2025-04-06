@@ -71,4 +71,12 @@
   ion-content {
     --background: #ffffff;
   }
+  .visible-button {
+    background-color: #007bff !important;
+    color: #fff !important;
+    font-weight: bold;
+    margin-top: 20px;
+    z-index: 9999;
+    position: relative;
+  }
   
