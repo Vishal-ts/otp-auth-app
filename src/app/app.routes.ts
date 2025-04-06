@@ -1,25 +1,20 @@
 import { Routes } from '@angular/router';
-
+import { RegisterPage } from './pages/register/register.page'; 
 export const routes: Routes = [
-  //{
-  //  path: 'home',
-   // loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-  //},
   {
     path: '',
-    redirectTo: 'register',
-    pathMatch: 'full'
+    component: RegisterPage  
   },
   {
     path: 'register',
-    loadComponent: () => import('./pages/register/register.page').then( m => m.RegisterPage)
+    loadComponent: () => import('./pages/register/register.page').then(m => m.RegisterPage)
   },
   {
     path: 'otp',
-    loadComponent: () => import('./pages/otp/otp.page').then( m => m.OtpPage)
+    loadComponent: () => import('./pages/otp/otp.page').then(m => m.OtpPage)
   },
   {
     path: 'dashboard',
-    loadComponent: () => import('./pages/dashboard/dashboard.page').then( m => m.DashboardPage)
-  },
+    loadComponent: () => import('./pages/dashboard/dashboard.page').then(m => m.DashboardPage)
+  }
 ];
