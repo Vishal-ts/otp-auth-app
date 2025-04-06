@@ -23,8 +23,11 @@ export class OtpPage implements OnInit {
     private toastController: ToastController
   ) {}
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    const mobile = this.otpService.getMobileNumber();
+    console.log('Mobile Number:', mobile); // Just to check
+  }
+  
   onOtpInput(event: any) {
     this.otp = this.otp.replace(/[^0-9]/g, '');  // Filter out non-numeric characters
   }

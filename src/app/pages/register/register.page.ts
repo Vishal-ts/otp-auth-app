@@ -86,16 +86,16 @@ export class RegisterPage implements OnInit {
     const fullNumber = this.countryCode + this.mobileNumber;
     this.otpService.sendOtp(fullNumber).subscribe({
       next: () => {
-        // Show success toast before navigating to OTP page
         this.showToast('OTP sent successfully!', 'success').then(() => {
           setTimeout(() => {
-            this.router.navigate(['/otp'], { state: { mobile: fullNumber } });
-          }, 2000); // Delay navigation for 2 seconds
+            this.router.navigate(['/otp']);
+          }, 2000);
         });
       },
       error: () => {
         this.showToast('Failed to send OTP. Please try again.');
-      },
+      }
     });
+    
   }
 }

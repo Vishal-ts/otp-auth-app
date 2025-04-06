@@ -26,6 +26,8 @@
 
     <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
 
-    <ion-button expand="block" color="primary" class="visible-button" (click)="sendOtp()">Send OTP</ion-button>
+    <ion-button expand="block" color="primary" (click)="sendOtp()">Send OTP</ion-button>
+    <!-- <button class="btn btn-primary btn-block" (click)="sendOtp()">Send OTP</button> -->
+
   </div>
 </ion-content>

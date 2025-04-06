@@ -5,23 +5,25 @@ import { Observable, of, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class OtpService {
-  private mockOtp: string = '';  // You can modify this to make it dynamic if needed
+  private mockOtp: string = '';
+  public mobileNumber: string = ''; // <-- Add this
 
-  constructor() {}
-
-  // Simulate sending OTP (Generate mock OTP)
   sendOtp(mobileNumber: string): Observable<any> {
-    this.mockOtp = '123456';  // For now, we use a fixed mock OTP
+    this.mockOtp = '123456';
+    this.mobileNumber = mobileNumber; // <-- Store here
     console.log(`Mock OTP sent: ${this.mockOtp}`);
-    return of({ success: true });  // Simulate successful OTP send
+    return of({ success: true });
   }
 
-  // Simulate OTP verification
+  getMobileNumber(): string {
+    return this.mobileNumber;
+  }
+
   verifyOtp(enteredOtp: string): Observable<any> {
     if (enteredOtp === this.mockOtp) {
-      return of({ success: true });  // Simulate OTP verification success
+      return of({ success: true });
     } else {
-      return throwError('Invalid OTP');  // Simulate OTP verification failure
+      return throwError('Invalid OTP');
     }
   }
 }
